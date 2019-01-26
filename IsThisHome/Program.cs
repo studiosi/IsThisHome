@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace IsThisHome
 {
@@ -10,6 +7,13 @@ namespace IsThisHome
     {
         static void Main(string[] args)
         {
+            // Console Initialization 
+            Console.ForegroundColor = ConsoleColor.Red;
+            ConsoleUtils.SetConsoleFont();
+            ConsoleUtils.RemoveResizeItems();           
+            Console.SetWindowSize(80, 25);
+            Console.SetBufferSize(80, 25);
+            // Game loop            
         }
     }
 }
