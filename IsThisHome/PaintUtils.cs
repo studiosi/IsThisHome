@@ -8,9 +8,6 @@ namespace IsThisHome
 {
     class PaintUtils
     {
-        //public PrintRoom(IRoom room)
-        // Screen is 80x25
-
         private static void PrintBorder()
         {
             StringBuilder star = new StringBuilder().Append("*");

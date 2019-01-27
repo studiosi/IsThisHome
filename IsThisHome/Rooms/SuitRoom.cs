@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IsThisHome
+namespace IsThisHome.Rooms
 {
     class SuitRoom : IRoom
     {

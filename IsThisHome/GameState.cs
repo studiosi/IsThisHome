@@ -1,8 +1,5 @@
-﻿using System;
+﻿using IsThisHome.Rooms;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace IsThisHome
 {
@@ -26,6 +23,7 @@ namespace IsThisHome
             Rooms = new Dictionary<int, IRoom>();
             Rooms.Add(0, new TitleRoom());
             Rooms.Add(1, new SuitRoom());
+            Rooms.Add(2, new NoReturnRoom());
         }
 
         public IRoom CurrentRoom { get; set; }
