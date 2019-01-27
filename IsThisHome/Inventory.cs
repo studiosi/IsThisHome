@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
-
+using System.Text;
 
 namespace IsThisHome
 {
-    enum Item
+    public enum Item
     {
         KEY,
         FLAMETHROWER
     }
 
-    class Inventory
+    public class Inventory
     {
         Dictionary<Item, int> objects;
         
@@ -17,6 +17,24 @@ namespace IsThisHome
         {
             objects = new Dictionary<Item, int>();
         }        
+
+        public List<string> GetText()
+        {
+            List<string> r = new List<string>();
+            r.Add("= INVENTORY =");
+            r.Add("");
+            foreach(Item i in objects.Keys)
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.Append(System.Enum.GetName(typeof(Item), i));
+                sb.Append(" - ");
+                sb.Append(objects[i]);
+                r.Add(sb.ToString());
+            }
+            r.Add("");
+            r.Add("Press enter to continue...");
+            return r;
+        }
 
         public void AddItem(Item i, int amount)
         {

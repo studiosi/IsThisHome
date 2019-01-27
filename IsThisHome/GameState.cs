@@ -6,9 +6,25 @@ using System.Threading.Tasks;
 
 namespace IsThisHome
 {
-    class GameState
+    public class GameState
     {
-        public string CurrentRoom { get; set; }
+
+        public GameState()
+        {
+            Objects = new Inventory();
+            LoadRooms();
+            CurrentRoom = Rooms[0];
+        }
+
+        public void LoadRooms()
+        {
+            Rooms = new Dictionary<int, IRoom>();
+            Rooms.Add(0, new TitleRoom());
+        }
+
+        public IRoom CurrentRoom { get; set; }
         public Inventory Objects { get; set; }
+        public bool GameCompleted { get; set; }
+        public Dictionary<int, IRoom> Rooms {get;set;}
     }
 }

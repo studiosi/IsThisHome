@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using System.Text;
 
 namespace IsThisHome
 {
@@ -58,6 +59,14 @@ namespace IsThisHome
         [DllImport("kernel32.dll", SetLastError = true)]
         static extern int SetConsoleFont(IntPtr hOut, uint dwFontNum);
 
+        [DllImport("kernel32.dll", SetLastError = true)]
+        internal static extern bool WriteConsoleOutputCharacter(
+        IntPtr hConsoleOutput,
+        StringBuilder lpCharacter,
+        uint nLength,
+        COORD dwWriteCoord,
+        out uint lpNumberOfCharsWritten);
+
         public static void RemoveResizeItems()
         {
             IntPtr handle = GetConsoleWindow();
@@ -96,5 +105,15 @@ namespace IsThisHome
             }
         }
 
+        public static void ConsoleWriteNoCursor(short x, short y, StringBuilder sb)
+        {
+
+            IntPtr hnd = GetStdHandle(STD_OUTPUT_HANDLE);
+            if (hnd != INVALID_HANDLE_VALUE)
+            {
+                uint charsWritten;
+                WriteConsoleOutputCharacter(hnd, sb, Convert.ToUInt32(sb.Length), new COORD(x, y), out charsWritten);
+            }
+        }
     }
 }

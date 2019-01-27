@@ -26,8 +26,22 @@ namespace IsThisHome
             "GOLD",
             "KEY"
         };
+        public static List<string> GetVerbsText()
+        {
+            List<string> r = new List<string>();
+            r.Add("= VERBS =");
+            r.Add("");
+            foreach (string name in verbs)
+            {
+                r.Add(name);
+            }
+            r.Add("");
+            r.Add("Press enter to continue...");
+            return r;
+        }
         public static TokenType FromWord(string word)
         {
+            int i;
             if (Token.objects.Contains<string>(word))
             {
                 return TokenType.OBJECT;
@@ -40,6 +54,11 @@ namespace IsThisHome
             {
                 return TokenType.VERB;
             }
+      
+            else if (int.TryParse(word, out i))
+            {
+                return TokenType.NUMBER;
+            }
             else
             {
                 return TokenType.NOT_RECOGNIZED;
@@ -51,6 +70,7 @@ namespace IsThisHome
         NOT_RECOGNIZED,
         VERB,
         OBJECT,
-        PREPOSITION
+        PREPOSITION,
+        NUMBER
     }
 }
