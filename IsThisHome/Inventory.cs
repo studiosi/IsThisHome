@@ -23,12 +23,19 @@ namespace IsThisHome
             List<string> r = new List<string>();
             r.Add("= INVENTORY =");
             r.Add("");
-            foreach(Item i in objects.Keys)
-            {
+            List <Item> items = new List<Item>(objects.Keys);
+            for(int i = 0; i < items.Count; i+=2)
+            {                
                 StringBuilder sb = new StringBuilder();
-                sb.Append(System.Enum.GetName(typeof(Item), i));
-                sb.Append(" - ");
-                sb.Append(objects[i]);
+                sb.Append(System.Enum.GetName(typeof(Item), items[i]));
+                if (i+1 < objects.Keys.Count)
+                {
+                    while(sb.Length <= 20)
+                    {
+                        sb.Append(" ");
+                    }
+                    sb.Append(System.Enum.GetName(typeof(Item), items[i + 1]));
+                }
                 r.Add(sb.ToString());
             }
             r.Add("");

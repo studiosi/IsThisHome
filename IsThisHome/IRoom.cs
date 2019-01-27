@@ -11,7 +11,7 @@ namespace IsThisHome
 
         List<String> GetText();
 
-        void ExecuteAction(GameState state, List<Tuple<String, TokenType>> tokens);
+        string ExecuteAction(GameState state, List<Tuple<String, TokenType>> tokens);
 
     }
 }

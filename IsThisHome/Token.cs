@@ -10,30 +10,85 @@ namespace IsThisHome
     {
         static string[] prepositions = {
             "ON",
+            "AT",
+            "TO",
             "FOR",
-            "AT"
+            "FROM",
+            "UP"
         };
         static string[] verbs = {
-            "RUN",
+            "START",
+            "SHOW",
+            "HELP",
+            "PUT",
+            "TALK",
+            "LOOK",
+            "FIX",
+            "USE",
+            "WAIT",
             "GO",
             "MOVE",
-            "OPEN"
+            "PUSH",
+            "EXAMINE",
+            "PICK",
+            "TAKE",
+            "JUMP",
+            "STAY",
+            "CONTINUE",
+            "WALK",
+            "CALL",
+            "SCAN",
+            "OBEY",
+            "SHOW",
+            "CLIMB",
+            "PICK",
+            "ADD",
+            "LEAVE",
+            "BEAM",
+            "QUIT"
         };
         static string[] objects =
         {
+            "PICTURE",
+            "SPACESUIT",
+            "JYRI",
             "FLAMETHROWER",
             "DOOR",
-            "GOLD",
-            "KEY"
+            "BUTTON",
+            "SOIL",
+            "MOUND",
+            "SAND",
+            "STAR-ROCK",
+            "SQUARE-ROCK",
+            "ROCK",
+            "RIGHT",
+            "LEFT",
+            "RADIOPHONE",
+            "HILL",
+            "LOCK",
+            "ICE",
+            "GENERAL",
+            "VERBS",
+            "PANEL"
         };
         public static List<string> GetVerbsText()
         {
             List<string> r = new List<string>();
             r.Add("= VERBS =");
             r.Add("");
-            foreach (string name in verbs)
+            for(int i = 0; i < verbs.Length; i+=2)
             {
-                r.Add(name);
+                string ps = "";
+                ps += verbs[i];
+                if(i + 1 < verbs.Length)
+                {
+                    while(ps.Length <= 20)
+                    {
+                        ps += " ";
+                    }                    
+                    ps += verbs[i + 1];
+                }
+                r.Add(ps);
             }
             r.Add("");
             r.Add("Press enter to continue...");

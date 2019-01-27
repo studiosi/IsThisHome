@@ -19,9 +19,17 @@ namespace IsThisHome
             return r;
         }
 
-        void IRoom.ExecuteAction(GameState state, List<Tuple<string, TokenType>> tokens)
+        string IRoom.ExecuteAction(GameState state, List<Tuple<string, TokenType>> tokens)
         {
-            return;
+            if(tokens.Count == 1)
+            {
+                if(tokens[0].Item1 == "START")
+                {
+                    state.GoToRoom(1);
+                    return "Let's do this!";
+                }
+            }
+            return "We can't do that...";
         }
     }
 }

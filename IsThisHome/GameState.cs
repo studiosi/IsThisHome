@@ -16,10 +16,16 @@ namespace IsThisHome
             CurrentRoom = Rooms[0];
         }
 
+        public void GoToRoom(int roomId)
+        {
+            CurrentRoom = Rooms[roomId];
+        }
+
         public void LoadRooms()
         {
             Rooms = new Dictionary<int, IRoom>();
             Rooms.Add(0, new TitleRoom());
+            Rooms.Add(1, new SuitRoom());
         }
 
         public IRoom CurrentRoom { get; set; }

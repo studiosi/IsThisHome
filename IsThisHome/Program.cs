@@ -19,6 +19,7 @@ namespace IsThisHome
             PaintUtils.PrintScreen(state.CurrentRoom);
             string command = "";
             while(command != "QUIT") {
+                PaintUtils.DeleteText();
                 PaintUtils.PrintScreen(state.CurrentRoom);
                 command = PaintUtils.GetInput().ToUpper();
                 List<Tuple<string, TokenType>> tokens = Parser.TokenizeAndParse(command);
@@ -52,7 +53,8 @@ namespace IsThisHome
                         }
                         else
                         {
-                            PaintUtils.PrintResult(command);
+                            string response = state.CurrentRoom.ExecuteAction(state, tokens);
+                            PaintUtils.PrintResult(response);
                         }
                     }
                 }
