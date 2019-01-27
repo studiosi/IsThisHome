@@ -29,32 +29,34 @@ namespace IsThisHome
                 {
                     break;
                 }
-                if(command == "SHOW INVENTORY")
-                {
-                    PaintUtils.DeleteText();
-                    PaintUtils.PrintNonRoomText(state.Objects.GetText());
-                    PaintUtils.GetInput();
-                    PaintUtils.DeleteText();
-                    executeCommand = false;
-                }
-                if(command == "SHOW VERBS" || command.ToUpper() == "HELP")
-                {
-                    PaintUtils.DeleteText();
-                    PaintUtils.PrintNonRoomText(Token.GetVerbsText());
-                    PaintUtils.GetInput();
-                    PaintUtils.DeleteText();
-                    executeCommand = false;
-                }
-                else {
-                    if(executeCommand) { 
-                        if (!Parser.IsValidStructure(tokens))
-                        {
-                            PaintUtils.PrintResult("I can't understand you");
-                        }
-                        else
-                        {
-                            string response = state.CurrentRoom.ExecuteAction(state, tokens);
-                            PaintUtils.PrintResult(response);
+                if(state.IsAlive && !state.GameCompleted) {
+                    if (command == "SHOW INVENTORY")
+                    {
+                        PaintUtils.DeleteText();
+                        PaintUtils.PrintNonRoomText(state.Objects.GetText());
+                        PaintUtils.GetInput();
+                        PaintUtils.DeleteText();
+                        executeCommand = false;
+                    }
+                    if (command == "SHOW VERBS" || command.ToUpper() == "HELP")
+                    {
+                        PaintUtils.DeleteText();
+                        PaintUtils.PrintNonRoomText(Token.GetVerbsText());
+                        PaintUtils.GetInput();
+                        PaintUtils.DeleteText();
+                        executeCommand = false;
+                    }
+                    else {
+                        if (executeCommand) {
+                            if (!Parser.IsValidStructure(tokens))
+                            {
+                                PaintUtils.PrintResult("I can't understand you");
+                            }
+                            else
+                            {
+                                string response = state.CurrentRoom.ExecuteAction(state, tokens);
+                                PaintUtils.PrintResult(response);
+                            }
                         }
                     }
                 }

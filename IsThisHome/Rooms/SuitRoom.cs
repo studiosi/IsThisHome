@@ -12,13 +12,32 @@ namespace IsThisHome.Rooms
         {
             if(tokens.Count == 1)
             {
-
+                if(tokens[0].Item1 == "GO")
+                {
+                    state.GoToRoom(2);
+                    return "Moving! Yes!";
+                }
+            }
+            else if(tokens.Count == 2)
+            {
+                if (tokens[0].Item1 == "USE" && tokens[1].Item1 == "PANEL")
+                {
+                    return "Welcome to Mars, -80F outside. Go out and explore. r.Add(sb.ToString());";
+                }
             }
             else if(tokens.Count == 3)
             {
-
+                if (tokens[0].Item1 == "PUT" && tokens[1].Item1 == "ON" && tokens[2].Item1 == "SPACESUIT")
+                {
+                    state.Objects.AddItem(Item.SPACESUIT, 1);
+                    return "I put it on. It's state-of-the-art. It has modules for small equipment.";
+                }
+                else if (tokens[0].Item1 == "LOOK" && tokens[1].Item1 == "AT" && tokens[2].Item1 == "PICTURE")
+                {
+                    return "This is Jonesy, the dog that I left behind on Earth. I feel pain.";
+                }
             }
-            return "We can't go that way.";
+            return "No... I can't do that";
         }
 
         public List<string> GetText()

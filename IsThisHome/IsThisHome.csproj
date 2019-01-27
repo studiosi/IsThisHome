@@ -53,8 +53,29 @@
     <Compile Include="Parser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rooms\Airlock2Room.cs" />
+    <Compile Include="Rooms\AirlockRoom.cs" />
+    <Compile Include="Rooms\ClimbHillRoom.cs" />
+    <Compile Include="Rooms\CornFieldsRoom.cs" />
+    <Compile Include="Rooms\DeathRoom.cs" />
+    <Compile Include="Rooms\ElectricMalfunction1Room.cs" />
+    <Compile Include="Rooms\ElectricMalfunction2Room.cs" />
+    <Compile Include="Rooms\EndRoom.cs" />
+    <Compile Include="Rooms\GeneralCallRoom.cs" />
+    <Compile Include="Rooms\GeneralDirectionsRoom.cs" />
+    <Compile Include="Rooms\ICanReturnRoom.cs" />
+    <Compile Include="Rooms\MartianSunriseRoom.cs" />
+    <Compile Include="Rooms\MemoriesRoom.cs" />
+    <Compile Include="Rooms\NoReturnRoom.cs" />
+    <Compile Include="Rooms\PositiveSampleRoom.cs" />
+    <Compile Include="Rooms\RedDustGloryRoom.cs" />
+    <Compile Include="Rooms\RedPlanetSplendourRoom.cs" />
+    <Compile Include="Rooms\ScottBeamRoom.cs" />
     <Compile Include="Rooms\SuitRoom.cs" />
     <Compile Include="Rooms\TitleRoom.cs" />
+    <Compile Include="Rooms\ViewOverPlainsRoom.cs" />
+    <Compile Include="Rooms\VisionRoom.cs" />
+    <Compile Include="Rooms\WaterIsGoneRoom.cs" />
     <Compile Include="Token.cs" />
   </ItemGroup>
   <ItemGroup>

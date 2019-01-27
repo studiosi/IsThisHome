@@ -51,6 +51,10 @@ namespace IsThisHome
                 {
                     return true;
                 }
+                else if (tknList[0] == TokenType.VERB && tknList[1] == TokenType.PREPOSITION && tknList[2] == TokenType.OBJECT)
+                {
+                    return true;
+                }
             }
             else if (tknList.Count() == 4)
             {

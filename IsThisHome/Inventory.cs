@@ -5,8 +5,29 @@ namespace IsThisHome
 {
     public enum Item
     {
-        KEY,
-        FLAMETHROWER
+        PICTURE,
+        SPACESUIT,
+        JYRI,
+        FLAMETHROWER,
+        DOOR,
+        BUTTON,
+        SOIL,
+        MOUND,
+        SAND,
+        STARROCK,
+        SQUAREROCK,
+        ROCK,
+        RIGHT,
+        LEFT,
+        RADIOPHONE,
+        HILL,
+        LOCK,
+        ICE,
+        GENERAL,
+        VERBS,
+        PANEL,
+        PICKAXE,
+        WATER
     }
 
     public class Inventory

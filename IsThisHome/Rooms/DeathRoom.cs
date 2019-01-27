@@ -10,12 +10,22 @@ namespace IsThisHome.Rooms
     {
         public string ExecuteAction(GameState state, List<Tuple<string, TokenType>> tokens)
         {
-            throw new NotImplementedException();
+            state.GameCompleted = true;
+            state.IsAlive = false;
+            return "";
         }
 
         public List<string> GetText()
         {
-            throw new NotImplementedException();
+            List<string> r = new List<string>();
+
+            r.Add("Your soul slowly slips away.");
+            r.Add("");
+            r.Add("Your eyes slowly close");
+            r.Add("");
+            r.Add("You are dead");
+
+            return r;
         }
     }
 }

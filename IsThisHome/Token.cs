@@ -19,7 +19,6 @@ namespace IsThisHome
         static string[] verbs = {
             "START",
             "SHOW",
-            "HELP",
             "PUT",
             "TALK",
             "LOOK",
@@ -45,7 +44,9 @@ namespace IsThisHome
             "ADD",
             "LEAVE",
             "BEAM",
-            "QUIT"
+            "QUIT",
+            "PRESS",
+            "HELP"
         };
         static string[] objects =
         {
@@ -58,8 +59,8 @@ namespace IsThisHome
             "SOIL",
             "MOUND",
             "SAND",
-            "STAR-ROCK",
-            "SQUARE-ROCK",
+            "STARROCK",
+            "SQUAREROCK",
             "ROCK",
             "RIGHT",
             "LEFT",
@@ -69,7 +70,8 @@ namespace IsThisHome
             "ICE",
             "GENERAL",
             "VERBS",
-            "PANEL"
+            "PANEL",
+            "PICKAXE"
         };
         public static List<string> GetVerbsText()
         {
